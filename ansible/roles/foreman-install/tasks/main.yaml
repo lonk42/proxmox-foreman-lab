@@ -1,0 +1,31 @@
+---
+
+- name: Add puppet7 repo
+  ansible.builtin.yum_repository:
+    name: puppet7
+    description: Puppet 7 Repository el 9 - $basearch
+    baseurl: http://yum.puppet.com/puppet7/el/9/$basearch
+    gpgkey: http://yum.puppetlabs.com/RPM-GPG-KEY-puppet
+    gpgcheck: true
+
+- name: Add foreman repo
+  ansible.builtin.yum_repository:
+    name: foreman
+    description: Foreman 3.10
+    baseurl: https://yum.theforeman.org/releases/3.10/el9/$basearch
+    gpgkey: https://yum.theforeman.org/releases/3.10/RPM-GPG-KEY-foreman
+    gpgcheck: true
+
+- name: Add foreman-plugins repo
+  ansible.builtin.yum_repository:
+    name: foreman-plugins
+    description: Foreman plugins 3.10
+    baseurl: https://yum.theforeman.org/plugins/3.10/el9/$basearch
+    gpgkey: https://yum.theforeman.org/releases/3.10/RPM-GPG-KEY-foreman
+    gpgcheck: true
+
+- name: Foreman installer package
+  ansible.builtin.package:
+    name: foreman-installer
+    state: present
+  notify: Run foreman installer

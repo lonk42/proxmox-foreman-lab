@@ -1,0 +1,4 @@
+---
+
+- name: Run foreman installer
+  ansible.builtin.command: foreman-installer

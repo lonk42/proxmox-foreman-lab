@@ -51,7 +51,7 @@ resource "proxmox_vm_qemu" "foreman" {
 
 resource "ansible_host" "foreman" {
 	name = proxmox_vm_qemu.foreman.name
-	groups = ["terraform"]
+	groups = ["terraform", "foreman"]
 	variables = {
 		ansible_user = var.cloud_init_user
 		ansible_host = regex(".*ip=(\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}).*", proxmox_vm_qemu.foreman.ipconfig0)[0]

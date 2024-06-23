@@ -1,1 +1,7 @@
 ---
+
+- name: Foreman server
+  hosts: foreman
+  become: true
+  roles:
+    - foreman-install
