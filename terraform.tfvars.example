@@ -1,0 +1,6 @@
+proxmox_host         = "1.2.3.4"
+proxmox_nodename     = "proxmox"
+proxmox_token_id     = "terraform-prov@pve!terraform"
+proxmox_token_secret = "xxxxxxxxxxxxxxxxxxxxxxxxxxx""
+cloud_init_user      = "username"
+cloud_init_ssh_keys  = "<ssh-rsa public key>"

@@ -1,0 +1,7 @@
+# Dont commit terraform data
+.terraform
+terraform.tfstate***
+terraform.tfvars
+.terraform.lock.hcl
+
+***vault-password
